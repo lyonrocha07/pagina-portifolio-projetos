@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Lyon M. da Rocha | Cientista de Dados &amp; ML Engineer</title>
+    <!-- Tailwind CSS v3 with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0a0f1d',
+                            card: '#111827',
+                            cyan: '#38bdf8',
+                            accent: '#0284c7',
+                            glow: 'rgba(56, 189, 248, 0.45)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Glow and UI Effects -->
+    <style data-purpose="glow-effects">
+        .glow-cyan-btn {
+            box-shadow: 0 0 25px 3px rgba(56, 189, 248, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .glow-cyan-btn:hover {
+            box-shadow: 0 0 35px 8px rgba(56, 189, 248, 0.65), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .avatar-glow {
+            box-shadow: 0 0 30px 4px rgba(56, 189, 248, 0.35);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#0a0f1d] text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-white">
+    <!-- BEGIN: MainHeader -->
+    <header class="sticky top-0 z-50 w-full bg-[#0a0f1d]/90 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a class="flex items-center gap-3 group" data-purpose="brand-logo" href="#home">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-cyan-400 flex items-center justify-center font-bold text-xl text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    D
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+                    Datafolio
+                </span>
+            </a>
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex items-center space-x-9 text-[15px] font-medium text-slate-300"
+                data-purpose="desktop-nav">
+                <div class="relative py-2"><a class="text-white hover:text-cyan-400 transition-colors"
+                        href="#home">Home</a>
+                    <div class="absolute bottom-0 left-0 w-full h-[2.5px] bg-cyan-400 rounded-full"></div>
+                </div><a class="hover:text-cyan-400 transition-colors py-2" href="#sobre-mim">Sobre Mim</a><a
+                    class="hover:text-cyan-400 transition-colors py-2" href="#stack">Stack</a><a
+                    class="hover:text-cyan-400 transition-colors py-2" href="#ferramentas">Ferramentas</a><a
+                    class="hover:text-cyan-400 transition-colors py-2" href="#portfolio">Portfólio</a><a
+                    class="hover:text-cyan-400 transition-colors py-2" href="#curriculo">Currículo</a><a
+                    class="hover:text-cyan-400 transition-colors py-2" href="#contato">Contato</a>
+            </nav>
+            <!-- Header Action CTA with Neon Glow -->
+            <div class="flex items-center">
+                <a class="glow-cyan-btn inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-gradient-to-r from-sky-400 to-cyan-400 text-slate-950 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all"
+                    href="#contato">
+                    <span class="">Let's Talk</span>
+                    <svg class="w-4 h-4 stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- END: MainHeader -->
+    <!-- BEGIN: MainContent -->
+    <main class="flex-grow">
+        <section class="max-w-6xl mx-auto px-6 pt-14 pb-20 flex flex-col items-center gap-12" id="home">
+            <div class="flex flex-col items-center text-center max-w-3xl mx-auto space-y-6 pt-6">
+                <div class="relative flex items-center justify-center">
+                    <div
+                        class="w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-cyan-500 to-sky-400 avatar-glow flex items-center justify-center overflow-hidden">
+                        <img alt="Lyon M. da Rocha" class="w-full h-full object-cover rounded-full"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMbFvYVJVsNvmq2XMWfECyQ0bhfB8oEkOYSioSxF-pkXt5EngIqZQ3rVKasSDUMnAK3cQJNHZWa6NnQM-qEjom0uICZafzv7K-NPdnJvRfqL5beL7yM2aR0454-aIPR6F_BLHS2n1tGf-Nym7N0nJXUTUvlQ-C1KZPB_Z19rxQpJqcZCNA1Mx-GvNh_eF2yHDFJbqS849ZdIQQQhxNygkqv24VtByvZxbc_3cFNZbD-EjQP_tEvWeVQw63oBdiiQa56a2p3xcVW1wOxdw">
+                    </div>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-slate-200 text-xs font-medium">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Disponível para novos projetos
+                    &amp; posições</div>
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mt-2">
+                    Lyon M. da Rocha</h1>
+                <h2 class="text-sm sm:text-base md:text-lg font-medium text-slate-300 tracking-wide max-w-xl mx-auto">
+                    <span class="text-slate-100">Profissional na área de Dados</span> <span
+                        class="text-cyan-400 font-normal mx-1.5">|</span> <span class="text-slate-100">Ciência de Dados
+                        &amp; Machine Learning</span></h2>
+                <div
+                    class="border-l-2 border-dotted border-cyan-400/80 pl-4 py-1 text-slate-300 italic text-sm sm:text-base leading-relaxed max-w-2xl text-left my-2">
+                    “Seja muito bem-vindo(a) ao meu portfólio. Aqui encontra projetos de Ciência de Dados focados na
+                    resolução de problemas reais de negócio, desenvolvidos com ferramentas e tecnologias modernas para
+                    gerar valor e eficiência.”</div>
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-2"><a
+                        class="glow-cyan-btn px-8 py-3 rounded-full bg-gradient-to-r from-sky-400 to-cyan-400 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-lg shadow-cyan-500/20"
+                        href="#portfolio">Ver Projetos</a><a
+                        class="px-8 py-3 rounded-full bg-slate-900/90 border border-slate-700 text-slate-200 font-semibold text-sm hover:border-slate-500 hover:text-white transition-all inline-flex items-center gap-2"
+                        href="#curriculo">Currículo <span class="">→</span></a></div>
+            </div>
+        </section>
+        <section class="max-w-6xl mx-auto px-6 mb-24" id="sobre-mim">
+            <div class="text-center mb-12">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-bold mb-3">Sobre Mim</h2>
+                <div class="max-w-3xl mx-auto space-y-4 text-center">
+                    <p class="text-base font-semibold text-white tracking-tight leading-relaxed">Profissional de Dados
+                        com formação na área e sólida vivência prática no setor comercial e de vendas. Utilizo a minha
+                        bagagem de negócios combinada com técnicas de Ciência de Dados, Estatística e Machine Learning
+                        para identificar oportunidades e construir soluções automatizadas que geram valor financeiro e
+                        operacional.</p>
+                    <p class="text-sm text-slate-300 leading-relaxed">Durante a minha atuação no comércio, apliquei
+                        Ciência de Dados diretamente na rotina do negócio para resolver dores reais da operação:</p>
+                    <div
+                        class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2 text-left bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 my-3">
+                        <p class=""><strong class="text-cyan-400 font-semibold">Otimização de Estoque &amp;
+                                Vendas:</strong> Criei automações em Python, SQL e Estatística para controle de estoque
+                            e análise de giro de produtos, reduzindo em 40% o tempo de reposição e impulsionando em 25%
+                            a venda de itens de baixo giro.</p>
+                        <p class=""><strong class="text-cyan-400 font-semibold">Priorização Comercial (Propensão de
+                                Compra):</strong> Desenvolvi um projeto de Learning to Rank em Python para ordenar
+                            contatos e otimizar abordagens comerciais, com potencial estimado de aumento de 39% no
+                            faturamento.</p>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed">O meu objetivo é atuar integralmente na área de
+                        Dados, entregando soluções ágeis, práticas e focadas no resultado final do negócio.</p>
+                    <div class="pt-3 text-xs text-slate-400 leading-relaxed space-y-1.5 border-t border-slate-800/80"
+                        id="stack">
+                        <p class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">Stack &amp; Ferramentas
+                        </p>
+                        <p class=""><span class="text-slate-200 font-medium">Linguagens &amp; Análise:</span> Python |
+                            SQL | R | Estatística Aplicada</p>
+                        <p class=""><span class="text-slate-200 font-medium">Machine Learning:</span> Classificação |
+                            Regressão | Agrupamento (Clustering) | Learning to Rank</p>
+                        <p class=""><span class="text-slate-200 font-medium">Bancos de Dados:</span> MySQL | Postgres |
+                            SQL Server | SQLite3</p>
+                        <p class=""><span class="text-slate-200 font-medium">Ferramentas &amp; Visão de Dados:</span>
+                            Tableau | Looker | Git | Airflow | Scrum em Decisões de Alto Impacto</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- BEGIN: HeroSection -->
+        <!-- END: HeroSection -->
+        <!-- BEGIN: StatsSection -->
+        <section class="max-w-6xl mx-auto px-6 mb-24">
+        </section>
+        <!-- END: StatsSection -->
+        <!-- BEGIN: SkillsSection -->
+        <section class="max-w-6xl mx-auto px-6 mb-24" id="ferramentas">
+            <div class="text-center mb-12">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-bold mb-3">Stack Tecnológica</h2>
+                <p class="text-3xl font-bold text-white tracking-tight">Ferramentas &amp; Frameworks</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center card-hover">
+                    <div class="text-2xl mb-2">🐍</div>
+                    <div class="font-semibold text-sm text-white">Python</div>
+                    <div class="text-xs text-slate-400">NumPy, Pandas</div>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center card-hover">
+                    <div class="text-2xl mb-2">🗄️</div>
+                    <div class="font-semibold text-sm text-white">SQL</div>
+                    <div class="text-xs text-slate-400">PostgreSQL &amp; Queries</div>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center card-hover">
+                    <div class="text-2xl mb-2">⚡</div>
+                    <div class="font-semibold text-sm text-white">Machine Learning</div>
+                    <div class="text-xs text-slate-400">Scikit-Learn &amp; Clusterização</div>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center card-hover">
+                    <div class="text-2xl mb-2">📊</div>
+                    <div class="font-semibold text-sm text-white">Metabase &amp; BI</div>
+                    <div class="text-xs text-slate-400">Dashboards &amp; Storytelling</div>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center card-hover">
+                    <div class="text-2xl mb-2">📐</div>
+                    <div class="font-semibold text-sm text-white">Estatística Aplicada</div>
+                    <div class="text-xs text-slate-400">Análise de Dados &amp; Testes</div>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center card-hover">
+                    <div class="text-2xl mb-2">🔄</div>
+                    <div class="font-semibold text-sm text-white">Git &amp; Versionamento</div>
+                    <div class="text-xs text-slate-400">Controle de Versão</div>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center card-hover">
+                    <div class="text-2xl mb-2">🐧</div>
+                    <div class="font-semibold text-sm text-white">Linux</div>
+                    <div class="text-xs text-slate-400">Ambiente Operacional</div>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center card-hover">
+                    <div class="text-2xl mb-2">☁️</div>
+                    <div class="font-semibold text-sm text-white">Cloud &amp; Big Data</div>
+                    <div class="text-xs text-slate-400">AWS CloudFormation</div>
+                </div>
+            </div>
+        </section>
+        <!-- END: SkillsSection -->
+        <!-- BEGIN: ProjectsSection -->
+        <section class="max-w-6xl mx-auto px-6 mb-24" id="portfolio">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-bold mb-3">Portfólio em Destaque
+                    </h2>
+                    <p class="text-3xl font-bold text-white tracking-tight">Projetos Recentes &amp; Impacto</p>
+                </div>
+                <a class="mt-4 md:mt-0 text-sm font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1"
+                    href="https://github.com" rel="noopener noreferrer" target="_blank">
+                    Ver repositórios no GitHub →
+                </a>
+            </div>
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Projeto 1 -->
+                <article
+                    class="bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden flex flex-col justify-between card-hover">
+                    <div class="relative w-full h-48 overflow-hidden"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ-ZdHkY6fF7pa3bqQXHbF4vEm3o-y5fLLO2EutQvYjKZFZYRfEUnmjeMc9JXekOqcH1dpMJSz7_bWFP8N1OxycQQ1dRDjON9X-h0SPkquAixuh-sJJQLx2PF7sB-SIxJZnJVbcTL_zXr8uVb1elYLRrR5s-9nMpiFYv4bJqmeGY6yefhgWbcJtkt3rpOyVQdYVnVXGLYGvJHIuD34ZbLWjrWESvE6o4nyKVT79laQkXB31kQvxwMdYA"
+                            alt="Programa de Fidelidade &amp; Clusterização de Clientes"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex items-center justify-between mb-4"><span
+                                    class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950/80 text-cyan-400 border border-cyan-800/50">Machine
+                                    Learning • Clusterização</span><span class="text-xs text-slate-400">2025 -
+                                    Presente</span></div>
+                            <h3 class="text-xl font-bold text-white mb-3">Programa de Fidelidade &amp; Clusterização de
+                                Clientes</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Desenvolvimento de programa de
+                                fidelidade e pontos com algoritmos não-supervisionados de Clusterização para segmentação
+                                avançada da base de clientes e personalização de ações de retenção.</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80 mb-5"><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Python</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Machine
+                                    Learning</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Clusterização</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Metabase</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Git</span></div><a
+                                class="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                                href="#">Ver Estudo de Caso <span class="">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 2 -->
+                <article
+                    class="bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden flex flex-col justify-between card-hover">
+                    <div class="relative w-full h-48 overflow-hidden"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAZXE4Z3hrsIYHkNlzWUjmWXf3jeLiKg47nMeg7D_YZjW1gmGlGTjHqILL4k9_j2gxlKGjWzM9T5rJMhMNBsjMA2ewnDEwterM473aBfhbwPD1v_2VZg7kVBT7dy5i9tilx72zCtDDNoIHd6ZaG8W6hnL4vp8Ia9tIKOpAPoft3_PLmtjQXQqJ19JTH_Bf0op2H_zNcIzWukI6eZp2uDR3mSK3ac0HvrLDdpjd9hA5P6b9Zo8kXWEsjw"
+                            alt="Modelo Learning to Rank para Ranqueamento de Leads"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex items-center justify-between mb-4"><span
+                                    class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">Machine
+                                    Learning • Otimização Comercial</span><span class="text-xs text-slate-400">2025 -
+                                    2026</span></div>
+                            <h3 class="text-xl font-bold text-white mb-3">Modelo Learning to Rank para Ranqueamento de
+                                Leads</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Construção de algoritmo de Learning
+                                to Rank para ordenação preditiva de leads comerciais, otimizando as abordagens do time
+                                de vendas com aumento estimado de até 39% no faturamento.</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80 mb-5"><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Python</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Machine
+                                    Learning</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Learning to
+                                    Rank</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">SQL</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Metabase</span>
+                            </div><a
+                                class="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                                href="#">Ver Estudo de Caso <span class="">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 3 -->
+                <article
+                    class="bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden flex flex-col justify-between card-hover">
+                    <div class="relative w-full h-48 overflow-hidden"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqtxayfjc8tfrczWj2CF9C-gUOC4hhkI1eItEbbOTQsWSilHET8snWAxR3XhrV-MBOkrldSnAas4VKXZqbBS1OxldCDfWDpxtDFJBWn8brkWS-C4JWDvEd2R0n1UG2_iLfn5gVFkS7xI9DTHflW7dM0opTIx1zv7kXadoE5UniymTtZlQePtY4rdgfrgAPqOpTp7cecDr9SPyvNKMxJSOx-y3QeZ1nJkckkZigyyDkJDs9tgn9Mh088Q"
+                            alt="Automação Inteligente de Controle de Estoque &amp; Reposição"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex items-center justify-between mb-4"><span
+                                    class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950/80 text-cyan-300 border border-cyan-800/50">Automação
+                                    • Estatística Aplicada</span><span class="text-xs text-slate-400">2023 - 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Automação Inteligente de Controle de Estoque
+                                &amp; Reposição</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Criação de sistema automatizado em
+                                Python e análise estatística para controle de estoque e reposição no varejo, reduzindo
+                                em 40% o tempo de conferência e reabastecimento de produtos em prateleira.</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80 mb-5"><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Python</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Estatística
+                                    Aplicada</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Automação</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Gestão de
+                                    Estoque</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Linux</span></div><a
+                                class="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                                href="#">Ver Estudo de Caso <span class="">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 4 -->
+                <article
+                    class="bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden flex flex-col justify-between card-hover">
+                    <div class="relative w-full h-48 overflow-hidden"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz_9vVXN1S2BodZosY3e5ifZbOL1OW3lAecphXiPmz7Gv7f6ww2bvZpK4Eq19csieFtVcIhryxU8bXazGNEywfBl2wwSn41EtIpSYG79CX75Nkd2choPa5havJ9wrJMUthtHpKc5Tnhqhw2mpJLyzZ3vHuz68roeyDvC6DMIumabRTfsjg2LyO667x7W__1eP0B2thv65n6ZVP1tf4-Uip8ebPKQrhRy9xS3wD4At02h5Kll0HPMzRbw"
+                            alt="Otimização de Giro de Vendas &amp; Análise de Itens Parados"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex items-center justify-between mb-4"><span
+                                    class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-950/80 text-purple-400 border border-purple-800/50">Data
+                                    Analytics • Business Intelligence</span><span class="text-xs text-slate-400">2022 -
+                                    2023</span></div>
+                            <h3 class="text-xl font-bold text-white mb-3">Otimização de Giro de Vendas &amp; Análise de
+                                Itens Parados</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Relatórios e pipelines analíticos via
+                                Python e SQL para identificação estratégica de produtos de baixo giro e mitigação de
+                                perdas operacionais, impulsionando em 25% as vendas de itens parados.</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80 mb-5"><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Python</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">SQL</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Análise
+                                    Estatística</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Vendas</span><span
+                                    class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">BI</span></div><a
+                                class="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                                href="#">Ver Estudo de Caso <span class="">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- END: ProjectsSection -->
+        <!-- BEGIN: ExperienceSection -->
+        <section class="max-w-6xl mx-auto px-6 mb-24" id="curriculo">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Currículo</h2>
+                <div class="w-14 h-1 bg-cyan-400 mx-auto mt-3 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div
+                    class="lg:col-span-4 bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col gap-6 text-left shadow-xl">
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full p-1 bg-gradient-to-tr from-cyan-500/40 via-sky-400/20 to-transparent avatar-glow flex items-center justify-center">
+                        <div
+                            class="w-full h-full rounded-full overflow-hidden border-2 border-cyan-400/40 bg-slate-900 shadow-lg shadow-cyan-500/10">
+                            <img alt="Lyon M. da Rocha" class="w-full h-full object-cover object-center rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMbFvYVJVsNvmq2XMWfECyQ0bhfB8oEkOYSioSxF-pkXt5EngIqZQ3rVKasSDUMnAK3cQJNHZWa6NnQM-qEjom0uICZafzv7K-NPdnJvRfqL5beL7yM2aR0454-aIPR6F_BLHS2n1tGf-Nym7N0nJXUTUvlQ-C1KZPB_Z19rxQpJqcZCNA1Mx-GvNh_eF2yHDFJbqS849ZdIQQQhxNygkqv24VtByvZxbc_3cFNZbD-EjQP_tEvWeVQw63oBdiiQa56a2p3xcVW1wOxdw">
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3">Resumo Profissional</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">Profissional de Dados com formação na área e
+                            sólida vivência prática no setor comercial e de vendas. Utilizo a minha bagagem de negócios
+                            combinada com técnicas de Ciência de Dados, Estatística e Machine Learning para identificar
+                            oportunidades e construir soluções automatizadas que geram valor financeiro e operacional
+                            real.</p>
+                    </div>
+                    <div class="border-t border-slate-800 pt-5">
+                        <h4 class="text-lg font-bold text-white mb-3">Informações de Contato</h4>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="">
+                                <div class="flex items-center gap-3"><svg class="w-4 h-4 text-cyan-400 shrink-0"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2"></path>
+                                    </svg><span class="">Mandirituba - PR, Brasil</span></div>
+                            </li>
+                            <li class="">
+                                <div class="flex items-center gap-3"><svg class="w-4 h-4 text-cyan-400 shrink-0"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    </svg><a class="truncate hover:text-cyan-400 transition-colors"
+                                        href="mailto:lyonrocha7@gmail.com">lyonrocha7@gmail.com</a></div>
+                            </li>
+                            <li class="">
+                                <div class="flex items-center gap-3"><svg class="w-4 h-4 text-cyan-400 shrink-0"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    </svg><a class="hover:text-cyan-400 transition-colors"
+                                        href="https://www.linkedin.com/in/lyon-rocha" rel="noopener noreferrer"
+                                        target="_blank">linkedin.com/in/lyon-rocha</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:col-span-8">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg></div>
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Experiência Profissional</h3>
+                    </div>
+                    <div class="relative pl-6 border-l border-slate-700/60 space-y-10 text-left">
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-slate-900">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                                    Cientista de Dados (Projetos Práticos)</h4>
+                                <p class="text-xs sm:text-sm font-semibold text-cyan-400 mb-2">Comunidade DS | Nov 2025
+                                    – Presente</p>
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 italic">Desenvolvimento prático de
+                                    soluções de Ciência de Dados e Machine Learning voltadas para a resolução de
+                                    problemas reais de negócio.</p>
+                                <ul class="list-disc list-outside pl-4 space-y-2 text-slate-300 text-sm">
+                                    <li class="">Desenvolvi programa de fidelidade e pontos com algoritmos de
+                                        Clusterização para segmentação de clientes.</li>
+                                    <li class="">Construí modelo de Learning to Rank para ranqueamento de leads e
+                                        otimização de chamadas do time comercial.</li>
+                                    <li class="">Criei algoritmos preditivos de Machine Learning para classificação,
+                                        regressão e análise de dados para tomada de decisão.</li>
+                                </ul>
+                                <p class="text-xs text-cyan-300 font-mono mt-3">Ferramentas: Python | SQL | Machine
+                                    Learning | Clusterização | Metabase | Git</p>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-slate-900">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                                    Analista de Operações &amp; Vendas (Projetos de Dados Aplicados)</h4>
+                                <p class="text-xs sm:text-sm font-semibold text-cyan-400 mb-2">Mercado Rocha | Jan 2022
+                                    – Abr 2026</p>
+                                <p class="text-slate-300 text-sm leading-relaxed mb-3 italic">Atuação no setor comercial
+                                    focada em vendas, gestão de rotinas operacionais e aplicação de soluções de dados
+                                    para otimização de processos internos.</p>
+                                <ul class="list-disc list-outside pl-4 space-y-2 text-slate-300 text-sm">
+                                    <li class="">Criei sistema de automação para controle de estoque e reabastecimento
+                                        utilizando Python e Estatística, reduzindo em 40% o tempo de conferência e
+                                        reposição de produtos nas prateleiras.</li>
+                                    <li class="">Desenvolvi relatórios de giro de vendas via Python e SQL para
+                                        identificação de produtos parados, impulsionando em 25% as vendas de itens de
+                                        baixo giro.</li>
+                                    <li class="">Otimizei processos operacionais no chão de loja utilizando análises
+                                        estatísticas para mitigação de perdas.</li>
+                                </ul>
+                                <p class="text-xs text-cyan-300 font-mono mt-3">Ferramentas: Python | SQL | Estatística
+                                    Aplicada | Gestão de Estoque | Linux</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 mt-12 mb-6">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></path>
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                <path d="M12 14v6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                </path>
+                            </svg></div>
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Educação</h3>
+                    </div>
+                    <div class="relative pl-6 border-l border-slate-700/60 space-y-10 text-left">
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-slate-900">
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                    <h4
+                                        class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                                        Curso Superior de Tecnologia (CST), Ciência de Dados</h4><span
+                                        class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-800/50 text-cyan-300 font-medium">Média:
+                                        8.76</span>
+                                </div>
+                                <p class="text-sm font-semibold text-cyan-400">Descomplica Faculdade Digital</p>
+                                <p class="text-xs text-slate-400 mb-3">jan de 2023 – jun de 2025</p>
+                                <p class="text-slate-300 text-sm leading-relaxed mb-4">Curso superior de Tecnologia
+                                    focado no ciclo completo de Ciência de Dados e Inteligência Artificial. Formação
+                                    voltada para o domínio de conceitos teóricos e práticos que vão desde a
+                                    infraestrutura de dados até a modelagem avançada.</p>
+                                <div
+                                    class="space-y-2.5 text-xs text-slate-300 pl-3 border-l-2 border-slate-800/90 mb-4">
+                                    <p class=""><strong class="text-cyan-400 font-semibold">Machine Learning e IA
+                                            Avançada:</strong> Desenvolvimento de modelos preditivos, Redes Neurais,
+                                        Deep Learning, Processamento de Linguagem Natural (NLP) e Visão Computacional.
+                                    </p>
+                                    <p class=""><strong class="text-cyan-400 font-semibold">Engenharia e
+                                            Infraestrutura:</strong> Algoritmos, Cloud Computing aplicável a dados,
+                                        arquitetura de Business Intelligence (BI) e ecossistema de Big Data.</p>
+                                    <p class=""><strong class="text-cyan-400 font-semibold">Análise Avançada:</strong>
+                                        Modelagem de dados inteligentes, Probabilidade e Estatística, além de técnicas
+                                        de Unificação e Clusterização de Dados.</p>
+                                    <p class=""><strong class="text-cyan-400 font-semibold">Foco em Negócios:</strong>
+                                        Aplicação prática de Ciência de Dados para tomadas de decisão estratégicas e
+                                        segurança (CyberSecurity).</p>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-800/80"><span
+                                        class="text-xs text-slate-400 font-medium mr-1">Competências:</span><span
+                                        class="text-xs bg-slate-800/90 text-cyan-300 px-2 py-0.5 rounded">Apache
+                                        Airflow</span><span
+                                        class="text-xs bg-slate-800/90 text-cyan-300 px-2 py-0.5 rounded">AWS
+                                        CloudFormation</span><span
+                                        class="text-xs bg-slate-800/90 text-slate-300 px-2 py-0.5 rounded">Machine
+                                        Learning</span><span
+                                        class="text-xs bg-slate-800/90 text-slate-300 px-2 py-0.5 rounded">Deep
+                                        Learning</span><span
+                                        class="text-xs bg-slate-800/90 text-slate-300 px-2 py-0.5 rounded">NLP</span><span
+                                        class="text-xs bg-slate-800/90 text-slate-300 px-2 py-0.5 rounded">Big
+                                        Data</span><span
+                                        class="text-xs bg-slate-800/90 text-slate-300 px-2 py-0.5 rounded">Cloud
+                                        Computing</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: ExperienceSection -->
+        <!-- BEGIN: ContactCTA -->
+        <section class="max-w-4xl mx-auto px-6 mb-24 text-center" id="contato">
+            <div
+                class="bg-gradient-to-b from-[#111c35] to-[#0a0f1d] border border-cyan-500/30 rounded-3xl p-10 md:p-14 shadow-2xl relative overflow-hidden">
+                <div
+                    class="absolute -top-24 -right-24 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-24 -left-24 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                    Vamos construir algo extraordinário juntos?
+                </h2>
+                <p class="text-slate-300 text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                    Estou sempre aberto para conversar sobre projetos de inteligência artificial, consultorias em
+                    machine learning ou posições estratégicas.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a class="glow-cyan-btn px-8 py-3.5 rounded-full bg-[#38bdf8] text-slate-950 font-bold text-sm tracking-wide transition-all"
+                        href="mailto:lyonrocha7@gmail.com">
+                        Enviar Mensagem Direta
+                    </a>
+                    <a class="px-8 py-3.5 rounded-full bg-slate-900 border border-slate-700 text-slate-200 font-semibold text-sm hover:border-slate-500 transition-all"
+                        href="https://www.linkedin.com/in/lyon-rocha" rel="noopener noreferrer" target="_blank">
+                        Conectar no LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- END: ContactCTA -->
+    </main>
+    <!-- END: MainContent -->
+    <!-- BEGIN: MainFooter -->
+    <footer class="border-t border-slate-800/80 bg-[#080c18] py-8 text-center text-slate-500 text-sm">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-6 h-6 rounded-lg bg-cyan-500 flex items-center justify-center font-bold text-xs text-slate-950">
+                    D</div>
+                <span class="text-slate-300 font-semibold">Lyon M. da Rocha</span>
+                <span class="">• Data Science &amp; Machine Learning</span>
+            </div>
+            <div class="">
+                © 2026 Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <!-- END: MainFooter -->
+    <!-- Scroll to Top Button matching bottom-right of reference -->
+    <a aria-label="Voltar ao topo"
+        class="fixed bottom-6 right-6 w-11 h-11 bg-cyan-400 hover:bg-cyan-300 text-slate-950 rounded-lg shadow-lg flex items-center justify-center transition-transform hover:-translate-y-1 z-40"
+        href="#home">
+        <svg class="w-5 h-5 stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M4.5 15.75l7.5-7.5 7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
